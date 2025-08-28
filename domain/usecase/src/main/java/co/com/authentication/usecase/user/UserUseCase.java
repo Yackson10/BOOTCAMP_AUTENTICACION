@@ -16,7 +16,7 @@ public class UserUseCase {
     private static final Pattern EMAIL_PATTERN =
             Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
-    //private final UserRepository userRepository;
+    private final UserRepository userRepository;
     //private final TransactionalOperator txOperator;
 
     public Mono<String> create (User user){
@@ -29,25 +29,20 @@ public class UserUseCase {
                 .flatMap(u -> validateSalary(u)
                         .thenReturn(u))
                 .flatMap(this::save);
-                //.as(txOperator::transactional);
 
     }
 
     public Mono<String> save(User user){
-        return Mono.empty();
-        /*return userRepository.emailDuplicate(user)
+        return userRepository.emailDuplicate(user)
                 .filter(isDuplicate -> !isDuplicate)
                 .switchIfEmpty(Mono.error(new RuntimeException("El email se encuentra duplicado")))
                 .flatMap(valid -> userRepository.save(user))
-                .thenReturn("El usuario ha sido creado");*/
+                .thenReturn("El usuario ha sido creado");
     }
 
     private Mono<Void> validateSalary(User user) {
-        Double salary = user.getBaseSalary();
+        double salary = user.getBaseSalary();
 
-        if (salary == null) {
-            return Mono.error(new RuntimeException("El salario es obligatorio"));
-        }
         if (salary < MIN_SALARY) {
             return Mono.error(new RuntimeException("El salario debe ser mayor o igual a " + MIN_SALARY));
         }
