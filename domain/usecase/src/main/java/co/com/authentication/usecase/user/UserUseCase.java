@@ -16,7 +16,7 @@ public class UserUseCase {
     private static final Pattern EMAIL_PATTERN =
             Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
-    private final UserRepository userRepository;
+    //private final UserRepository userRepository;
     //private final TransactionalOperator txOperator;
 
     public Mono<String> create (User user){
@@ -34,11 +34,12 @@ public class UserUseCase {
     }
 
     public Mono<String> save(User user){
-        return userRepository.emailDuplicate(user)
+        return Mono.empty();
+        /*return userRepository.emailDuplicate(user)
                 .filter(isDuplicate -> !isDuplicate)
                 .switchIfEmpty(Mono.error(new RuntimeException("El email se encuentra duplicado")))
                 .flatMap(valid -> userRepository.save(user))
-                .thenReturn("El usuario ha sido creado");
+                .thenReturn("El usuario ha sido creado");*/
     }
 
     private Mono<Void> validateSalary(User user) {
