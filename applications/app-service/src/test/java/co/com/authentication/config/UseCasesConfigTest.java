@@ -1,4 +1,4 @@
-package co.com.programacionreactive.config;
+package co.com.authentication.config;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

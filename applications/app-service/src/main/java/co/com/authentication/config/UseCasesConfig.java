@@ -1,11 +1,11 @@
-package co.com.programacionreactive.config;
+package co.com.authentication.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 
 @Configuration
-@ComponentScan(basePackages = "co.com.programacionreactive.usecase",
+@ComponentScan(basePackages = "co.com.authentication.usecase",
         includeFilters = {
                 @ComponentScan.Filter(type = FilterType.REGEX, pattern = "^.+UseCase$")
         },

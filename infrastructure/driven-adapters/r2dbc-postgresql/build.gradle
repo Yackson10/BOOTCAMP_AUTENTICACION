@@ -1,0 +1,13 @@
+dependencies {
+    implementation project(':model')
+    implementation 'org.springframework:spring-context'
+    implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
+    implementation 'jakarta.persistence:jakarta.persistence-api' // TODO: Check if it's still necessary
+    implementation 'com.github.jasync-sql:jasync-r2dbc-mysql:2.1.16'
+    implementation 'org.reactivecommons.utils:object-mapper-api:0.1.0'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.3.1.Final'
+    implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+
+    testImplementation 'org.reactivecommons.utils:object-mapper:0.1.0'
+}
+
