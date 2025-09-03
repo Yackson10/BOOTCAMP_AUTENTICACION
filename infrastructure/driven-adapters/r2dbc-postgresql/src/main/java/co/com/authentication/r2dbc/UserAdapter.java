@@ -1,4 +1,4 @@
-package co.com.authentication.r2dbc.config;
+package co.com.authentication.r2dbc;
 
 import co.com.authentication.model.user.User;
 import co.com.authentication.r2dbc.mapper.UserEntityMapper;
@@ -32,5 +32,12 @@ public class UserAdapter implements UserRepository {
                 .map(mapper::toEntityFromModel)
                 .flatMap(userRepository::save)
                 . map(mapper::toModelFromEntity);
+    }
+
+    @Override
+    public Mono<User> findByEmail(String email) {
+        log.debug("Buscando usuario por email: {}", email);
+        return userRepository.findByEmail(email)
+                .map(mapper::toModelFromEntity);
     }
 }

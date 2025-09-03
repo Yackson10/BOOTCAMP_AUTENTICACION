@@ -1,4 +1,4 @@
-package co.com.authentication.model.user.gateways;
+package co.com.authentication.model.user;
 
 import lombok.*;
 

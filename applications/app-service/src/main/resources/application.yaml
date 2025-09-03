@@ -33,3 +33,14 @@ entries:
     path-base: "${PATH_BASE:/api/v1/credi-ya}"
     path-user: "${PATH_USER:/user}"
     save: "/save"
+    path-auth: "/auth"
+    login: "/login"
+jwt:
+  secret: "miClaveSecreta123"
+  expiration-ms: 3600000
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
+    co.com.authentication: DEBUG

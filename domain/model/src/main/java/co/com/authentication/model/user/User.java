@@ -19,6 +19,9 @@ public class User {
     private String phone;
     private String email;
     private double baseSalary;
-    private Long idRol;
+
+    private Rol rol;
+
+    private String password;
 
 }

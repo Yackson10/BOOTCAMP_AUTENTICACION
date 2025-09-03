@@ -4,9 +4,9 @@ import co.com.authentication.model.user.User;
 import co.com.authentication.model.user.gateways.UserRepository;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
-//import org.springframework.transaction.reactive.TransactionalOperator;
 
 import java.util.regex.Pattern;
+
 
 @RequiredArgsConstructor
 public class UserUseCase {
@@ -17,7 +17,6 @@ public class UserUseCase {
             Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
     private final UserRepository userRepository;
-    //private final TransactionalOperator txOperator;
 
     public Mono<String> create (User user){
         return Mono.just(user)
