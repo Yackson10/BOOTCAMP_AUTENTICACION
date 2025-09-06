@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder(toBuilder = true)
-public class User {
+public class UserToken {
 
     private Long id;
     private String firstName;
@@ -21,6 +21,8 @@ public class User {
     private double baseSalary;
     private String documentNumber;
 
-    private Long idRol;
+    private Rol rol;
+
+    private String password;
 
 }

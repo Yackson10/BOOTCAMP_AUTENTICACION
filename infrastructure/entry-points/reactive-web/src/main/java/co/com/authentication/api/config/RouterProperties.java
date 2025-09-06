@@ -12,6 +12,8 @@ public class RouterProperties {
     private String pathUser;
     private String save;
 
+    private String existByDocument;
+
     private String pathAuth;
     private String login;
 

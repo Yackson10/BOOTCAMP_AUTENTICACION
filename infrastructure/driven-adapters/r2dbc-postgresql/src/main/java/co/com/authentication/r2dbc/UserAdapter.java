@@ -40,4 +40,10 @@ public class UserAdapter implements UserRepository {
         return userRepository.findByEmail(email)
                 .map(mapper::toModelFromEntity);
     }
+
+    @Override
+    public Mono<User> findByDocumentNumber(String documentNumber) {
+        return userRepository.findByDocumentNumber(documentNumber)
+                .map(mapper::toModelFromEntity);
+    }
 }

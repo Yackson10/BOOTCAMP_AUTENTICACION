@@ -51,8 +51,11 @@ public class UserUseCase {
         return Mono.empty();
     }
 
+    public Mono<User> findByDocumentNumber (String documentNumber) {
+        return userRepository.findByDocumentNumber(documentNumber);
 
 
+    }
 
 
 }

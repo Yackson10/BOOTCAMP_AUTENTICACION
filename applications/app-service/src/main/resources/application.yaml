@@ -33,6 +33,7 @@ entries:
     path-base: "${PATH_BASE:/api/v1/credi-ya}"
     path-user: "${PATH_USER:/user}"
     save: "/save"
+    exist-by-document: "/document/{documentNumber}"
     path-auth: "/auth"
     login: "/login"
 jwt:

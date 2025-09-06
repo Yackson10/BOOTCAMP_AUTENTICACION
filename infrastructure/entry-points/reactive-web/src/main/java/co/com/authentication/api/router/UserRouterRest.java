@@ -18,12 +18,14 @@ public class UserRouterRest {
 
     @Bean
     public RouterFunction<ServerResponse> routerCountryFunction(UserHandler userHandler) {
-        String route = createRoute(properties.getSave());
+        var route = createRoute(properties.getSave());
+        var routeDocument = createRoute(properties.getExistByDocument());
 
         log.info("Registrando endpoint [POST {}]", route);
 
         return RouterFunctions.route()
                 .POST(route, userHandler::save)
+                .GET(routeDocument, userHandler::existByDocument)
                 .build();
     }
 

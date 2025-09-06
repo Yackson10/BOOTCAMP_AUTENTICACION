@@ -1,6 +1,7 @@
 package co.com.authentication.r2dbc.entity;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,8 +24,8 @@ public class UserEntity {
     private String phone;
     private String email;
     private double baseSalary;
+    private String documentNumber;
 
-    //private String password;
     private Long idRol;
 
 

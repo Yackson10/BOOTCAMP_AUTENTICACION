@@ -7,6 +7,10 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface UserOperation extends R2dbcRepository<UserEntity, Long> {
-        Mono<UserEntity> findByEmail(String email);
-    }
+
+    Mono<UserEntity> findByEmail(String email);
+
+    Mono<UserEntity> findByDocumentNumber(String documentNumber);
+
+}
 
