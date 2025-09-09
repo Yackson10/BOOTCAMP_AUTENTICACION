@@ -22,6 +22,8 @@ public class UserEntityTest {
                 "3012345678",
                 "pedro.gomez@mail.com",
                 3500.0,
+                "1",
+                "1",
                 3L
         );
 

@@ -24,6 +24,7 @@ public class UserUseCase {
                 .filter(u -> u.getLastName()!=null && !u.getLastName().isEmpty())
                 .filter(u -> u.getEmail()!=null && !u.getEmail().isEmpty())
                 .filter(u -> EMAIL_PATTERN.matcher(u.getEmail()).matches())
+                .filter(u -> u.getPassword() != null && !u.getPassword().isEmpty())
                 .switchIfEmpty(Mono.defer(() -> Mono.error(new RuntimeException("Faltan datos por ingresar"))))
                 .flatMap(u -> validateSalary(u)
                         .thenReturn(u))

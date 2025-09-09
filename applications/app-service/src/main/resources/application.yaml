@@ -37,7 +37,7 @@ entries:
     path-auth: "/auth"
     login: "/login"
 jwt:
-  secret: "miClaveSecreta123"
+  secret: "MySuperSecretKeyThatIsVeryLongAndHasAtLeastSixtyFourCharacters123456"
   expiration-ms: 3600000
 
 logging:

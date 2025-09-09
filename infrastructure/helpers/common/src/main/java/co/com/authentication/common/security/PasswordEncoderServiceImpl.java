@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class PasswordEncoderServiceImpl  implements PasswordEncoderService {
 
-    //private final BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
     @Override
     public String encode(String rawPassword) {
         return "";

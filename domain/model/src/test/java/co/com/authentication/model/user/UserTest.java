@@ -21,8 +21,10 @@ class UserTest {
                 "Calle 123",
                 "3001234567",
                 "juan@example.com",
-                2500.0,
-                2L
+                123456,
+                "145354654",
+                1L,
+                "1232451345"
         );
 
         assertEquals(1L, user.getId());

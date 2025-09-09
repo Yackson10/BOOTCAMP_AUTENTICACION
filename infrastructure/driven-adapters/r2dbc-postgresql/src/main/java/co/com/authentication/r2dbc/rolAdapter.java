@@ -19,6 +19,7 @@ public class rolAdapter implements IRolRepository {
 
     @Override
     public Mono<Rol> findById(Long id) {
-        return null;
+        return rolOperation.findById(id)
+                .map(rolEntityMapper::toModelFromEntity);
     }
 }

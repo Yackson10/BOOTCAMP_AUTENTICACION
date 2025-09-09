@@ -1,6 +1,5 @@
 package co.com.authentication.usecase.user;
 
-import co.com.authentication.model.security.PasswordEncoderService;
 import co.com.authentication.model.user.gateways.IRolRepository;
 import co.com.authentication.model.user.gateways.ITokenProvider;
 import co.com.authentication.model.user.gateways.UserRepository;
@@ -19,7 +18,7 @@ public class LoginUseCase {
                 .switchIfEmpty(Mono.error(new RuntimeException("Usuario no encontrado")))
                 .flatMap(user -> iRolRepository.findById(user.getIdRol())
                         .map(rol -> {
-                            return iTokenProvider.generateToken(user);
+                            return iTokenProvider.generateToken(user, rol);
                         })
                 );
     }

@@ -23,4 +23,6 @@ public class User {
 
     private Long idRol;
 
+    private String password;
+
 }
